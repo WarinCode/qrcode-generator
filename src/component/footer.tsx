@@ -1,8 +1,9 @@
+// import react
 import React, { Fragment } from "react";
 
-// style
-import '../style/App.css'
-import { fontfooter } from '../style/style'
+// import style
+import '../style/App.css';
+import { fontfooter } from '../style/style';
 
 export default function Footer(){
     return(
