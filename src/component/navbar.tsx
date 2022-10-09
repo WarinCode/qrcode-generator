@@ -1,10 +1,14 @@
+// import react
 import { Fragment } from "react";
-import Swal from 'sweetalert2'
-// img
+
+// import lib
+import Swal from 'sweetalert2';
+
+// import img
 import logo from '../img/react.svg';
 
-// style
-import { fontnavbar , distance2 , navbar_brand } from '../style/style'
+// import style
+import { fontnavbar , distance2 , navbar_brand } from '../style/style';
 
 const Navbar = () => {
   function react(){
@@ -15,7 +19,7 @@ const Navbar = () => {
       imageWidth: 400,
       imageHeight: 200,
       imageAlt: 'Custom image',
-    })
+    });
   }
     return (
       <Fragment>
