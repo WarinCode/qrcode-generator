@@ -1,12 +1,19 @@
-import { Fragment , FunctionComponent, useState} from "react"
-import QRCode from "react-qr-code"
-import  * as style from '../style/style'
-import Swal from "sweetalert2"
+// import react
+import { Fragment , FunctionComponent, useState} from "react";
+
+// import style
+import  * as style from '../style/style';
+
+// import lib
+import QRCode from "react-qr-code";
+import Swal from "sweetalert2";
 
 const QR_Code:FunctionComponent = () => {
     const [state , setState] = useState('');
     const create_qrcode = (event:(any|undefined|null))=> setState(event.target.value);
-    const downloading = (event:(any|undefined|null)):void => { // Ref: https://github.com/rosskhanas/react-qr-code
+    
+    // Ref: https://github.com/rosskhanas/react-qr-code
+    const downloading = (event:(any|undefined|null)):void => { 
         event.preventDefault();
         const svg:any|null = document.querySelector('.QRCode') ;
         const svgData:string = new XMLSerializer().serializeToString(svg);
@@ -35,16 +42,12 @@ const QR_Code:FunctionComponent = () => {
             title: 'คัดลอกเรียบร้อย!',
             showConfirmButton: false,
             timer: 1300
-          })
-        if(state == ''){
-            return null
-        } else {
-            return navigator.clipboard.writeText(state);
-        }
+          });
+        return navigator.clipboard.writeText(state);
     }
 
     const cancel = () => setState((copy:string) => {
-        return copy = ''.toString()
+        return copy = ''.toString();
     })
     
     return (
@@ -72,4 +75,4 @@ const QR_Code:FunctionComponent = () => {
         )
     }
 
-export default QR_Code
+export default QR_Code;
